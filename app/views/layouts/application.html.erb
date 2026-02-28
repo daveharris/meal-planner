@@ -26,7 +26,20 @@
   </head>
 
   <body>
-    <main class="container-fluid">
+    <main class="container-fluid <%= controller_name %> <%= action_name %>">
+      <nav aria-label="breadcrumb">
+        <ul>
+          <li>
+            <%= link_to '🏠', root_path %>
+          </li>
+          <% if content_for?(:title) %>
+            <li>
+              <%= content_for(:title) %>
+            </li>
+          <% end %>
+        </ul>
+      </nav>
+
       <%= yield %>
     </main>
   </body>
