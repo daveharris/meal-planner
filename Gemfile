@@ -45,8 +45,8 @@ group :development, :test do
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem "brakeman", require: false
 
-  # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
-  gem "rubocop-rails-omakase", require: false
+  # Ruby's bikeshed-proof linter and formatter [https://github.com/standardrb/standard]
+  gem "standard"
 end
 
 group :development do
