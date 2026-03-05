@@ -1,0 +1,19 @@
+<% content_for :title, "Stored Meals" %>
+
+<h1>Stored Meals</h1>
+
+<% Meal.locations.keys.each do |location| %>
+  <% meals = @meals_by_location[location] %>
+
+  <article class="location">
+    <h3><%= location.humanize %> (<%= meals.size %>)</h3>
+
+    <div id="<%= location %>"><%= render meals %></div>
+  </article>
+<% end %>
+
+<article>
+  <h3>New</h3>
+
+  <%= render "form" %>
+</article>

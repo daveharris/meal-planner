@@ -1,0 +1,11 @@
+<%= form_with model: Meal.new, data: {
+      controller: "utils",
+      action: "turbo:submit-end->utils#reset"
+    } do |f| %>
+  <%= f.text_field :name, placeholder: true, required: true %>
+  <%= f.text_field :quantity, placeholder: true, required: true %>
+  <%= f.select :location, Meal.locations.keys.map { |it| [it.humanize, it] }, prompt: "Select location ...", required: true %>
+  <%= f.date_field :expires_on, required: false %>
+
+  <%= f.submit "Add" %>
+<% end %>
