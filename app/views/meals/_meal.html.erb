@@ -1,0 +1,21 @@
+<div class="grid meal" id="<%= dom_id(meal) %>">
+  <div>
+    <strong><%= meal.quantity %></strong>
+
+    <% if meal.discrete? %>
+      x
+    <% end %>
+
+    <%= meal.name %>
+  </div>
+
+  <div class="grid auto-max justify-end">
+    <div><%= meal.expires_on %></div>
+
+    <div>
+      <%= link_to meal, data: { turbo_method: :delete } do %>
+        <i style="font-size: 0.75rem">🗑️</i>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -10,18 +10,16 @@
       <th>🫴</th>
     </tr>
   </thead>
+
   <tbody>
     <% @plans.each do |plan| %>
       <tr>
         <%= form_with(model: plan) do |f| %>
-          <td>
-            <%= plan.date.strftime("%a") %>
-          </td>
+          <td><%= plan.date.strftime("%a") %></td>
 
           <td>
             <%= f.text_field :meal,
-              data: { controller: "plan", action: "change->plan#update" }
-            %>
+              data: { controller: "plan", action: "change->plan#update" } %>
           </td>
 
           <td>
