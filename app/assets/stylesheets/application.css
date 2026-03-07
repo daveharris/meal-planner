@@ -93,3 +93,12 @@ main.meals {
     display: none;
   }
 }
+
+main.ingredients {
+
+  /* Hide .location elements that don't contain .ingredient elements */
+  .location:not(:has(.ingredient)) {
+    display: none;
+  }
+
+}

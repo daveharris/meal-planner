@@ -1,0 +1,19 @@
+<% content_for :title, "Stored Ingredients" %>
+
+<h1>Stored Ingredients</h1>
+
+<% Ingredient.locations.keys.each do |location| %>
+  <% ingredients = @ingredients_by_location[location] %>
+
+  <article class="location">
+    <h3><%= location.humanize %></h3>
+
+    <div id="<%= location %>"><%= render ingredients %></div>
+  </article>
+<% end %>
+
+<article>
+  <h3>New</h3>
+
+  <%= render "form" %>
+</article>

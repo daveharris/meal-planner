@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
 
+  resources :ingredients, only: [:index, :create, :update, :destroy]
   resources :meals, only: [:index, :create, :update, :destroy]
   resources :plans, only: [:index, :update]
 

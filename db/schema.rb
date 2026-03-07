@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_03_01_021221) do
+ActiveRecord::Schema[8.0].define(version: 2026_03_06_090620) do
+  create_table "ingredients", force: :cascade do |t|
+    t.string "name"
+    t.string "quantity"
+    t.integer "location"
+    t.date "expires_on"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "meals", force: :cascade do |t|
     t.string "name"
     t.string "quantity"

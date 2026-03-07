@@ -1,0 +1,21 @@
+<div class="grid ingredient" id="<%= dom_id(ingredient) %>">
+  <div>
+    <strong><%= ingredient.quantity %></strong>
+
+    <% if ingredient.discrete? %>
+      x
+    <% end %>
+
+    <%= ingredient.name %>
+  </div>
+
+  <div class="grid auto-max justify-end">
+    <div><%= ingredient.expires_on %></div>
+
+    <div>
+      <%= link_to ingredient, data: { turbo_method: :delete } do %>
+        <i style="font-size: 0.75rem">🗑️</i>
+      <% end %>
+    </div>
+  </div>
+</div>

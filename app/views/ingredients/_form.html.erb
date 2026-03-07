@@ -1,0 +1,15 @@
+<%= form_with model: Ingredient.new, data: {
+      controller: "utils",
+      action: "turbo:submit-end->utils#reset"
+    } do |f| %>
+  <%= f.text_field :name, placeholder: true, required: true %>
+
+  <div class="grid auto-max">
+    <%= f.text_field :quantity, placeholder: true, required: true %>
+    <%= f.select :location, Ingredient.locations.keys.map { |it| [it.humanize, it] }, prompt: "Location ...", required: true %>
+  </div>
+
+  <%= f.date_field :expires_on, required: false %>
+
+  <%= f.submit "Add" %>
+<% end %>
